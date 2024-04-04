@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Nameless.Weather.App.props" />
+</Project>
