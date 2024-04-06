@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/marcoaoteixeira/workspace/net_aot_weather_app/Nameless.Weather.App/Nameless.Weather.App.csproj": {}
+    "C:\\Workspace\\net_aot_weather_app\\Nameless.Weather.App\\Nameless.Weather.App.csproj": {}
   },
   "projects": {
-    "/home/marcoaoteixeira/workspace/net_aot_weather_app/Nameless.Weather.App/Nameless.Weather.App.csproj": {
+    "C:\\Workspace\\net_aot_weather_app\\Nameless.Weather.App\\Nameless.Weather.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marcoaoteixeira/workspace/net_aot_weather_app/Nameless.Weather.App/Nameless.Weather.App.csproj",
+        "projectUniqueName": "C:\\Workspace\\net_aot_weather_app\\Nameless.Weather.App\\Nameless.Weather.App.csproj",
         "projectName": "Nameless.Weather.App",
-        "projectPath": "/home/marcoaoteixeira/workspace/net_aot_weather_app/Nameless.Weather.App/Nameless.Weather.App.csproj",
-        "packagesPath": "/home/marcoaoteixeira/.nuget/packages/",
-        "outputPath": "/home/marcoaoteixeira/workspace/net_aot_weather_app/Nameless.Weather.App/obj/",
+        "projectPath": "C:\\Workspace\\net_aot_weather_app\\Nameless.Weather.App\\Nameless.Weather.App.csproj",
+        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspace\\net_aot_weather_app\\Nameless.Weather.App\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/marcoaoteixeira/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -41,6 +53,18 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Microsoft.DotNet.ILCompiler": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )",
+              "autoReferenced": true
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -58,6 +82,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.3, 8.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.3, 8.0.3]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.3, 8.0.3]"
+            },
+            {
+              "name": "runtime.win-x64.Microsoft.DotNet.ILCompiler",
+              "version": "[8.0.3, 8.0.3]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -66,7 +108,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

@@ -12,8 +12,23 @@
       }
     ],
     "configProperties": {
+      "Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability": true,
+      "System.ComponentModel.TypeConverter.EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization": false,
+      "System.Diagnostics.Tracing.EventSource.IsSupported": true,
       "System.GC.Server": true,
-      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
+      "System.GC.DynamicAdaptationMode": 1,
+      "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
+      "System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported": false,
+      "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
+      "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,
+      "System.Runtime.InteropServices.EnableCppCLIHostActivation": false,
+      "System.Runtime.InteropServices.Marshalling.EnableGeneratedComInterfaceComImportInterop": false,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+      "System.StartupHookProvider.IsSupported": false,
+      "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
+      "System.Text.Json.JsonSerializer.IsReflectionEnabledByDefault": false,
+      "System.Threading.Thread.EnableAutoreleasePool": false,
+      "System.Linq.Expressions.CanEmitObjectArrayDelegate": false
     }
   }
 }
