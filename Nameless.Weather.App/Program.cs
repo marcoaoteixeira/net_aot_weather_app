@@ -1,39 +1,41 @@
-internal class Program
+namespace Nameless.Weather.App
 {
-    private static void Main(string[] args)
+    internal class Program
     {
-        var stopwatch = Stopwatch.GetTimestamp();
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        // NOTE: If we're using AOT, unfortunately we lost SWAGGER =/
-        //builder.Services.AddEndpointsApiExplorer();
-        //builder.Services.AddSwaggerGen();
-
-        builder.Services.ConfigureHttpJsonOptions(opts =>
+        private static void Main(string[] args)
         {
-            opts.SerializerOptions.TypeInfoResolver = new CustomJsonSerializerContext();
-        });
+            var stopwatch = Stopwatch.GetTimestamp();
+            var builder = WebApplication.CreateBuilder(args);
 
-        var app = builder.Build();
+            // Add services to the container.
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            // NOTE: If we're using AOT, unfortunately we lost SWAGGER =/
+            //builder.Services.AddEndpointsApiExplorer();
+            //builder.Services.AddSwaggerGen();
 
-        var lifetime = app.Services.GetRequiredService<IHostApplicationLifetime>();
-        lifetime.ApplicationStarted.Register(() =>
-        {
-            Console.WriteLine($"Total ms to start: {Stopwatch.GetElapsedTime(stopwatch).TotalMilliseconds}");
-        });
+            builder.Services.ConfigureHttpJsonOptions(opts =>
+            {
+                opts.SerializerOptions.TypeInfoResolver = new CustomJsonSerializerContext();
+            });
 
-        // Configure the HTTP request pipeline.
-        //if (app.Environment.IsDevelopment()) {
-        //    app.UseSwagger();
-        //    app.UseSwaggerUI();
-        //}
+            var app = builder.Build();
 
-        app.UseHttpsRedirection();
+            var lifetime = app.Services.GetRequiredService<IHostApplicationLifetime>();
+            lifetime.ApplicationStarted.Register(() =>
+            {
+                Console.WriteLine($"Total ms to start: {Stopwatch.GetElapsedTime(stopwatch).TotalMilliseconds}");
+            });
 
-        var summaries = new[]
-        {
+            // Configure the HTTP request pipeline.
+            //if (app.Environment.IsDevelopment()) {
+            //    app.UseSwagger();
+            //    app.UseSwaggerUI();
+            //}
+
+            app.UseHttpsRedirection();
+
+            var summaries = new[]
+            {
             "Freezing",
             "Bracing",
             "Chilly",
@@ -46,26 +48,28 @@ internal class Program
             "Scorching"
         };
 
-        app.MapGet("/weatherforecast", () =>
-        {
-            var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-                .ToArray();
-            return forecast;
-        })
-        .WithName("GetWeatherForecast")
-        .WithOpenApi();
+            app.MapGet("/weatherforecast", () =>
+            {
+                var forecast = Enumerable.Range(1, 5).Select(index =>
+                    new WeatherForecast
+                    (
+                        DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                        Random.Shared.Next(-20, 55),
+                        summaries[Random.Shared.Next(summaries.Length)]
+                    ))
+                    .ToArray();
+                return forecast;
+            })
+            .WithName("GetWeatherForecast")
+            .WithOpenApi();
 
-        app.Run();
+            app.Run();
+        }
     }
-}
 
-public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+    {
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+
 }
